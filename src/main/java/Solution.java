@@ -26,7 +26,7 @@ public class Solution extends SolutionAbstraite {
 		this.initValeursLibres();
 	}
 	
-	// Methode privée qui copie les nombres dans la Stack valeursLibres
+	// Methode privÃ©e qui copie les nombres dans la Stack valeursLibres
 	private void initValeursLibres() {
 		this.getValeursLibres().clear();
 		for(int n : this.getNombre()) 
@@ -43,7 +43,7 @@ public class Solution extends SolutionAbstraite {
 		Operateur op;
 		
 		for (int i = 0; i < 5; i++) {
-			//Choix de deux nombres aléatoires dans la liste
+			//Choix de deux nombres alÃ©atoires dans la liste
 			a = this.getValeursLibres().size() > 0 ? this.getValeursLibres().remove(rand.nextInt(this.getValeursLibres().size())) : 0;
 			b = this.getValeursLibres().size() > 0 ? this.getValeursLibres().remove(rand.nextInt(this.getValeursLibres().size())) : 0;
 			
@@ -113,23 +113,23 @@ public class Solution extends SolutionAbstraite {
     				procheBut = calc; // Initialise procheBut
     			}
     			
-    			// Si la difference entre le calcul actuel et la valeur trouvé la plus proche du but est suppérieur
+    			// Si la difference entre le calcul actuel et la valeur trouvÃ© la plus proche du but est suppÃ©rieur
     			// A la difference entre le nombre le plus proche du but et du but :
     			if (Math.abs(calc - this.getBut()) < Math.abs(procheBut - this.getBut())) {
     				resolvTemp = this.getEtapes().toString(); // On ecrase les anciennes etapes et on mets les nouvelles
-                    procheBut = calc; // On actualise la valeur la plus proche
-                }
+                    		procheBut = calc; // On actualise la valeur la plus proche
+                	}
     		}
     		
     		this.reinit(); // On reinitialise la Stack de nombres et le StringBuilder d'etapes
     	}
     	
-    	resolutionLocal.append(resolvTemp); // A la fin on mets les etapes menant au resultat trouvé dans le SB.
+    	resolutionLocal.append(resolvTemp); // A la fin on mets les etapes menant au resultat trouvÃ© dans le SB.
     	
-    	if (nbCalculs != nbCalculsMax) // Si on a trouvé le bon resultat
-    		resolutionLocal.append("\nSuccès ! Nombre ").append(this.getBut()).append(" trouvé en ").append(nbCalculs).append(" iterations.");
+    	if (nbCalculs != nbCalculsMax) // Si on a trouvÃ© le bon resultat
+    		resolutionLocal.append("\nSuccÃ¨s ! Nombre ").append(this.getBut()).append(" trouvÃ© en ").append(nbCalculs).append(" iterations.");
     	else // Sinon
-    		resolutionLocal.append("\nNombre le plus proche trouvé est le : ").append(procheBut).append(" trouvé en ").append(nbCalculs).append(" iterations.\n");
+    		resolutionLocal.append("\nNombre le plus proche trouvÃ© est le : ").append(procheBut).append(" trouvÃ© en ").append(nbCalculs).append(" iterations.\n");
     	
     	return resolutionLocal.toString();
     }
